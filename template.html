@@ -1,7 +1,5 @@
 <style>
-    .steps {
-        display: none;
-    }
+    .steps { display: none }
 </style>
 <script>
 /* Start of Help Popup Modular Script*/
@@ -24,41 +22,38 @@ $( document ).ready(function() {
 <div class="row skeleton">
     <div id="area0" class="col-xs-6">
         <!-- Questionary -->
-		<!-- Step -1-->
+		<!-- Step -1 -->
         <div id="step_relevant_filter" class="steps">
             <h1>Is this photo spam?</h1>
-				<p>Sometimes, people collecting photos might accidentally send something not useful, like an advertisement.</p>
-				<p>If this photo is an advertisement or similar you should choose "Spam"</p>
-				<p>Selecting "Spam" will skip this photo</p>
-				<p>Selecting "Not Spam" or "I don't know" will allow you to go ahead with the analysis</p>
-				<p>If you are not sure, select "I don't know"</p>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
-                <button class="step_relevant_filter btn btn-danger btn-answer" value='Yes'><i class="fa fa-white fa-thumbs-down"></i> Spam</button>
-                <!-- If the user clicks this button, the saved answer will be value="no"-->
-                <button class="step_relevant_filter btn btn-success btn-answer" value='No'><i class="fa fa-white fa-thumbs-up"></i> Not Spam</button>
-                <!-- If the user clicks this button, the saved answer will be value="NoPhoto"-->
+            <p>Sometimes, people collecting photos might accidentally send something not useful, like an advertisement.</p>
+            <p>If this photo is an advertisement or similar you should choose "Spam"</p>
+            <p>Selecting "Spam" will skip this photo</p>
+            <p>Selecting "Not Spam" or "I don't know" will allow you to go ahead with the analysis</p>
+            <p>If you are not sure, select "I don't know"</p>
+            <div id="step_relevant_filter_answer">
+                <button class="step_relevant_filter btn btn-answer btn-danger" value='Yes'><i class="fa fa-white fa-thumbs-down"></i> Spam</button>
+                <button class="step_relevant_filter btn btn-answer btn-success" value='No'><i class="fa fa-white fa-thumbs-up"></i> Not Spam</button>
                 <button class="step_relevant_filter btn btn-answer" value='NoPhoto'><i class="fa fa-white fa-exclamation"></i> No photo</button>
-                <!-- If the user clicks this button, the saved answer will be value="Unknown"-->
                 <button class="step_relevant_filter btn btn-answer" value='Unknown'><i class="fa fa-white fa-question-sign"></i> I don't know</button>
-            </div><!-- End of DIV for the submission buttons -->
+            </div>
         </div>
         <!-- End Step -1 -->
-        <!-- Step 0-->
+        <!-- Step 0 -->
         <div id="step_0" class="steps">
             <h1>Are there crops in the photo?</h1>
 			<div class="row help_popup col-xs-12">
-			<i class="fa fa-exclamation-circle"></i> How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
+                <i class="fa fa-exclamation-circle"></i> How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
 				<div class="help_popup_description col-xs-12">
 					<p>This is a simple filtering question to remove any photos that do not have crops in them and therefore are not relevant to the analysis.</p>
-					<p>Click "yes" if you see crop plants in the photo</p>
+					<p>Click "Yes" if you see crop plants in the photo</p>
 					<p>If you are not sure what you are looking at, look for some of the following signs:</p>
-					<ul><li>Machinery, tools, irrigation, and other items associated with agriculture</li>
+					<ul>
+                        <li>Machinery, tools, irrigation, and other items associated with agriculture</li>
 						<li>Plants are in rows</li>
 						<li>Fences, hedgerows or other marking the boundaries of a field</li>
-						<li>Homogeneity in the field - all the plants are the same species, the same height, and/or look the same age</li></ul>
-					<p>You should also click "yes" if the crop appears dead as these can still give lots of information about the environmental conditions in the area</p>
-
+						<li>Homogeneity in the field - all the plants are the same species, the same height, and/or look the same age</li>
+                    </ul>
+					<p>You should also click "Yes" if the crop appears dead as these can still give lots of information about the environmental conditions in the area</p>
 					<div class="row">
 						<div class="col-sm-4">
 							<p>Maize (corn) just before harvest</p>
@@ -77,11 +72,13 @@ $( document ).ready(function() {
 						</div>
 					</div>
 					<hr>
-					<p>Click "no" if you are looking at a natural environment or an agricultural field without crops.</p>
-					<p>Natural environments can be recognised by the following:<p>
-					<ul><li>A variety of species growing in the same area</li>
-						<li>Different layers in the vegetation that may include an understorey (such as grasses), a midstorey (such as smaller trees and shrubs), and an overstorey (the taller trees)</li></ul>
-					<p>Here are some examples for which you would click "no"</p>
+					<p>Click "No" if you are looking at a natural environment or an agricultural field without crops.</p>
+                    <p>Natural environments can be recognised by the following:<p>
+                    <ul>
+                        <li>A variety of species growing in the same area</li>
+                        <li>Different layers in the vegetation that may include an understorey (such as grasses), a midstorey (such as smaller trees and shrubs), and an overstorey (the taller trees)</li>
+                    </ul>
+					<p>Here are some examples for which you would click "No"</p>
 					<div class="row">
 						<div class="col-sm-4">
 							<p>Agricultural fields without crops</p>
@@ -97,30 +94,27 @@ $( document ).ready(function() {
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
-                <button class="step_0 btn btn-success btn-answer" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <!-- If the user clicks this button, the saved answer will be value="no"-->
-                <button class="step_0 btn btn-danger btn-answer" value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-                <!-- If the user clicks this button, the saved answer will be value="NoPhoto"-->
-                <button class="step_0 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> Its not clear</button>
-                <!-- If the user clicks this button, the saved answer will be value="Unknown"-->
-                <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_0 btn btn-answer" value='Unknown'><i class="fa fa-white fa-question-sign"></i> I don't know</button>
-            </div><!-- End of DIV for the submission buttons -->
+            <div id="step_0_answer">
+                <button class="step_0 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
+                <button class="step_0 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+                <button class="step_0 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+                <button class="step_0 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
+            </div>
         </div>
         <!-- End Step 0 -->
-
-        <!-- Step 1-->
+        <!-- Step 1 -->
         <div id="step_1" class="steps">
             <h1>Can you see the method of cultivation?</h1>
 			<div class="row help_popup col-xs-12">
-			<i class="fa fa-exclamation-circle"></i> How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
+                <i class="fa fa-exclamation-circle"></i> How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
 				<div class="help_popup_description col-xs-12">
 					<p>This helps us know what sort of machinery and/or tools are used in agricultural activities in an area. Machinery or tools could be damaged during a disaster and will need to be replaced before people can begin working their land again.</p>
 					<p>Knowing the types of tools people are using can also give an idea of the agricultural production capabilities in an area. Those with with access to machinery and larger fields are likely to produce more than farmers working manually in smaller plots. At the same time, smaller subsistence farms might be more sensitive to drought and reduced yields are very likely to impact the local populations</p>
-					<ul><li><strong>Manual cultivation:</strong> All the work is done by hand, or using hand-held, non mechanised tools such as scythes, hand-pushed plows etc. A person working in their fields with their hands would be an example of manual cultivation. However a person standing in the field does not indicate manual cultivation.</li>
+					<ul>
+                        <li><strong>Manual cultivation:</strong> All the work is done by hand, or using hand-held, non mechanised tools such as scythes, hand-pushed plows etc. A person working in their fields with their hands would be an example of manual cultivation. However a person standing in the field does not indicate manual cultivation.</li>
 						<li><strong>With animals:</strong> Similar to manual cultivation, however animals are used to help. If animals are involved they will often be hooked up to farming equipment</li>
 						<li><strong>By machine:</strong> Machines are used to improve the efficiency of cultivation. Look for mechanised equipment and tools such as tractors</li>
+                    </ul>
 					<hr>
 					<p>Here are some examples of the different methods of cultivation:</p>
 					<div class="row">
@@ -151,41 +145,40 @@ $( document ).ready(function() {
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+            <div id="step_1_answer">
                 <button class="step_1 btn btn-answer" value='Manual'>Manual cultivation</button>
-                <!-- If the user clicks this button, the saved answer will be value="no"-->
                 <button class="step_1 btn btn-answer" value='Animals'>With animals</button>
                 <button class="step_1 btn btn-answer" value='Machine'>By machine</button>
-				<button class="step_1 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> Its not clear</button>
-				<button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_1 btn btn-answer" value='Unknown'><i class="fa fa-white fa-question-sign"></i>I don't know</button>
-            </div><!-- End of DIV for the submission buttons -->
+				<button class="step_1 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_1 btn btn-answer" value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+            </div>
         </div>
         <!-- End Step 1-->
-
-		<!-- Step 2-->
+		<!-- Step 2 -->
         <div id="step_2" class="steps">
             <h1>What species of crop are you seeing?</h1>
-			<p>Hint: search the internet to find pictures that will help you identify what you are seeing in the photo, you can use the links under each suggested species to start</p>
-
+    		<p>Hint: search the internet to find pictures that will help you identify what you are seeing in the photo, you can use the links under each suggested species to start</p>
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i>How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
 				<div class="help_popup_description col-xs-12">
 					<p>What crops are being grown where is useful baseline information. Together with the method of cultivation this information could help us answer questions needed in the response effort such as: What crops are being grown? Are the cash or subsistence crops? Which crops are prefered by the local population? Are local farmers adapting to the weather conditions and planting more drought tolerant crops during dry years?</p>
 					<h3>How can I identify a crop species?</h3>
-					<p>Identifying the species of crop you are looking at from just a photo can be very difficult. Here are a few tips to help your search:
-					<ul><li>Look at the photo context, often the crop is written in the caption or other associated text.</li>
-						<li>Compare the photos of the examples provided with the photo you are looking at</li>
-						<li>Use the resources available on the internet to help you.</li>
-						<li>Use Google! Follow the link under the thumbnail to begin searching</li></ul>
-						</p>
+					<p>
+                        Identifying the species of crop you are looking at from just a photo can be very difficult. Here are a few tips to help your search:
+    					<ul>
+                            <li>Look at the photo context, often the crop is written in the caption or other associated text.</li>
+    						<li>Compare the photos of the examples provided with the photo you are looking at</li>
+    						<li>Use the resources available on the internet to help you.</li>
+    						<li>Use Google! Follow the link under the thumbnail to begin searching</li>
+                        </ul>
+					</p>
 					<p><strong>None of the suggestions match?</strong> Try looking for lists of agricultural products for the region or country you are working on. Under the "Other" box there should be a link to a document on the relevant agricultural sector, you can start your search from here.</p>
 					<p><strong>What to search for?</strong><ul><li>Keywords: "agriculture", "crops", the name of the country in which you are working</li><li>"What do they grow in XX country?"</li><li>Agricultural department (or similar), NGO's, or organisations like the Food and Agriculture Organisation (FAO). These organisations often have inventories or reports on the agricultural activities within a particular country.</li></ul></p>
 					<p>Identifying a plant can often take some time, so don't get discouraged if you feel it is taking too long! And if you are stuck you can always click the "Unknown" button and move onto the next question.</p>
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
+            <div id="step_2_answer">
                 <ul class="thumbnails">
                     <li class="col-xs-4">
                         <div class="thumbnail">
@@ -243,12 +236,9 @@ $( document ).ready(function() {
 					<p>&nbsp;</p>
 					<li class="col-xs-4">
 						<div>
-							<p>
-							Not in the list? Type your identification here, these resources could help your identification:
-							</p>
-							<input id="crops_other" type="text" name="crops_other">
-							<br/>
-							<button class="button step_2 btn btn-answer">Done</button>
+							<p>Not in the list? Type your identification here, these resources could help your identification:</p>
+							<input id="crops_other" type="text" name="crops_other"><br>
+							<button id="crops_other_button" class="button step_2 btn btn-answer">Done</button>
 						</div>
 					</li>
 					<li class="col-xs-4">
@@ -258,11 +248,10 @@ $( document ).ready(function() {
                         </div>
                     </li>
                 </ul>
-            </div><!-- End of DIV for the submission buttons -->
+            </div>
         </div>
         <!-- End Step 2 -->
-
-		<!-- Step 3-->
+		<!-- Step 3 -->
         <div id="step_3" class="steps">
             <h1>Are the crops green?</h1>
 			<div class="row help_popup col-xs-12">
@@ -272,13 +261,12 @@ $( document ).ready(function() {
 					<p><strong>Click Yes</strong> if you can see green in the plant</p>
 					<p><strong>Click No</strong> if the plants have no green at all, or less than 10% green</p>
 					<hr>
-					<p>Below are some examples for which you should click "yes"</p>
+					<p>Below are some examples for which you should click "Yes"</p>
 					<div class="row">
 						<div class="col-sm-6">
 							<p>Green healthy crops (this is a millet field)</p>
 							<a target="_blank" href="http://static.panoramio.com/photos/large/45493424.jpg"><img style="width:400px;" src="http://static.panoramio.com/photos/large/45493424.jpg" class="img-thumbnail"></a>
 							<p style="font-size:10px;"><i class="fa fa-picture"></i> <a target="_blank" href="http://www.panoramio.com/user/4324714?with_photo_id=45493424">Cory Enger</a></p>
-
 						</div>
 						<div class="col-sm-6">
 							<p>Crops that appear partially dry</p>
@@ -293,7 +281,6 @@ $( document ).ready(function() {
 							<p>Dried-out crops</p>
 							<a target="_blank" href="http://www.cescan.dreamhosters.com/wp-content/uploads/2011/08/drought_corn.jpg"><img style="width:300px;" src="http://www.cescan.dreamhosters.com/wp-content/uploads/2011/08/drought_corn.jpg" class="img-thumbnail"></a>
 							<p style="font-size:10px;"><i class="fa fa-picture"></i> <a target="_blank" href="http://www.cescan.ca/harambee-report/kenyan-drought/">CES Canada</a></p>
-
 						</div>
 						<div class="col-sm-6">
 							<p>Crops that appear mostly dried out</p>
@@ -304,26 +291,22 @@ $( document ).ready(function() {
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
-                <button class="step_3 btn btn-success btn-answer" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <!-- If the user clicks this button, the saved answer will be value="no"-->
-                <button class="step_3 btn btn-danger btn-answer" value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_3 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> Its not clear</button>
-				<button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_1 btn btn-answer" value='Unknown'><i class="fa fa-white fa-question-sign"></i>I don't know</button>
-            </div><!-- End of DIV for the submission buttons -->
+            <div id="step_3_answer">
+                <button class="step_3 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
+                <button class="step_3 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+                <button class="step_3 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+                <button class="step_1 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+            </div>
         </div>
         <!-- End Step 3 -->
-
-		<!-- Step 4-->
+		<!-- Step 4 -->
         <div id="step_4" class="steps">
             <h1>Do the plants seem to be wilting? Or their leaves rolling?</h1>
-
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i>How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
 				<div class="help_popup_description col-xs-12">
 					<p>Plants take water up from the soil. The water passes through the plant and evaporates via small pores called stomata on the leaves. This process is called transpiration. </p>
-					<p>Rolling leaves in plants is a defence mechanism to minimise transpiration during times of water stress so the plant won’t lose too much water (<a target="_blank" href="http://vanishingbananas.blogspot.ch/2012/07/thirsty-corn-and-rolled-up-leaves.html">Click here for more info</a>). Therefore rolling leaves are a sign that there might be drought. </p>
+					<p>Rolling leaves in plants is a defence mechanism to minimise transpiration during times of water stress so the plant won't lose too much water (<a target="_blank" href="http://vanishingbananas.blogspot.ch/2012/07/thirsty-corn-and-rolled-up-leaves.html">Click here for more info</a>). Therefore rolling leaves are a sign that there might be drought. </p>
 					<p>Wilting of plants indicates that cells have begun to die and break down because of lack of water. Wilting plants might still be green but look limp, like they are falling over. They may even have begun to lose their green colour. The plant loses its green colour when the cell dies and the chlorophyll in the plant breaks down.</p>
 					<hr>
 					<p>Below are some examples of photos for which you would click "Yes":</p>
@@ -361,18 +344,15 @@ $( document ).ready(function() {
 				</div>
 			</div>
 			<p>&nbsp;</p>
-			<div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+			<div id="step_4_answer">
                 <button class="step_4 btn btn-success btn-answer" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <!-- If the user clicks this button, the saved answer will be value="no"-->
-                <button class="step_4 btn btn-danger btn-answer" value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_4 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> Its not clear</button>
-				<button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_4 btn btn-answer" value='Unknown'><i class="fa fa-white fa-question-sign"></i>I don't know</button>
-            </div><!-- End of DIV for the submission buttons -->
+                <button class="step_4 btn btn-danger btn-answer"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="step_4 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_4 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+            </div>
         </div>
         <!-- End Step 4 -->
-
-        <!-- Step 5-->
+        <!-- Step 5 -->
         <div id="step_5" class="steps">
             <h1>Do you see any green vegetation in the field?</h1>
 			<div class="row help_popup col-xs-12">
@@ -382,18 +362,15 @@ $( document ).ready(function() {
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+            <div id="step_5_answer">
                 <button class="step_5 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <!-- If the user cli11ks this button, the saved answer will be value="no"-->
-                <button class="step_5 btn btn-answer btn-danger" value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_5 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> Its not clear</button>
-				<button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_5 btn btn-answer" value='Unkown'><i class="fa fa-white fa-question-sign"></i> I don't know</button>
-            </div><!-- End of DIV for the submission buttons -->
+                <button class="step_5 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="step_5 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_5 btn btn-answer"             value='Unkown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
+            </div>
         </div>
         <!-- End Step 5 -->
-
-        <!-- Step 6-->
+        <!-- Step 6 -->
         <div id="step_6" class="steps">
             <h1>Is the vegetation around the edges of the field green?</h1>
 			<div class="row help_popup col-xs-12">
@@ -403,25 +380,29 @@ $( document ).ready(function() {
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+            <div id="step_6_answer">
                 <button class="step_6 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <!-- If the user cli11ks this button, the saved answer will be value="no"-->
-                <button class="step_6 btn btn-answer btn-danger" value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_6 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> Its not clear</button>
-				<button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_6 btn btn-answer" value='Unkown'><i class="fa fa-white fa-question-sign"></i> I don't know</button>
-            </div><!-- End of DIV for the submission buttons -->
+                <button class="step_6 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="step_6 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_6 btn btn-answer"             value='Unkown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
+            </div>
         </div>
         <!-- End Step 6 -->
-
-        <!-- Step 7-->
+        <!-- Step 7 -->
         <div id="step_7" class="steps">
             <h1>Does the crop look like it has been harvested?</h1>
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i>How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
 				<div class="help_popup_description col-xs-12">
 					<p>If the crop has been successfully harvested prior to or during the disaster then there was likely some food from it.</p>
-					<p>Signs of harvest could be: <ul><li>Plants that are bent over or cut</li><li>Piles of plants that were cut down</li><li>Plants that look like the tops were cut off</li></ul></p>
+					<p>
+                        Signs of harvest could be:
+                        <ul>
+                            <li>Plants that are bent over or cut</li>
+                            <li>Piles of plants that were cut down</li>
+                            <li>Plants that look like the tops were cut off</li>
+                        </ul>
+                    </p>
 					<hr>
 					<p>Below are some examples of photos for which you would click "Yes"</p>
 					<div class="row">
@@ -443,7 +424,6 @@ $( document ).ready(function() {
 							<p>Crops that appear mostly dried out</p>
 							<a target="_blank" href="http://media.salon.com/2011/07/when_food_shortages_bring_war.jpg"><img style="width:400px;" src="http://media.salon.com/2011/07/when_food_shortages_bring_war.jpg" class="img-thumbnail"></a>
 							<p style="font-size:10px;"><i class="fa fa-picture"></i> <a target="_blank" href="http://www.salon.com/2011/07/19/food_shortage_politics/">Salon</a></p>
-
 						</div>
 						<div class="col-sm-6">
 							<p>Whole plants that have fallen down</p>
@@ -454,21 +434,17 @@ $( document ).ready(function() {
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+            <div id="step_7_answer">
                 <button class="step_7 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <!-- If the user cli11ks this button, the saved answer will be value="no"-->
-                <button class="step_7 btn btn-answer btn-danger" value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_7 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> Its not clear</button>
-				<button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_7 btn btn-answer" value='Unknown'><i class="fa fa-white fa-question-sign"></i>I don't know</button>
-            </div><!-- End of DIV for the submission buttons -->
+                <button class="step_7 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="step_7 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_7 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+            </div>
         </div>
         <!-- End Step 7 -->
-
-		<!-- Step 8-->
+		<!-- Step 8 -->
         <div id="step_8" class="steps">
             <h1>Are there any plants missing from the rows?</h1>
-
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i> How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
 				<div class="help_popup_description col-xs-12">
@@ -478,36 +454,32 @@ $( document ).ready(function() {
 						<a target="_blank" href="http://www.agry.purdue.edu/ext/corn/news/articles.12/pix/20120620-019e.jpg"><img style="width:400px;" src="http://www.agry.purdue.edu/ext/corn/news/articles.12/pix/20120620-019e.jpg"></img></a>
 						<p style="font-size:10px;"> <a target="_blank" href="http://www.agry.purdue.edu/ext/corn/news/articles.12/HotDryMidSeason-0625.html#">Purdue University</a></p>
 					</div>
-					<p>Click "No" for the following example - this is a field with no missing plants.
-					<div class="col-sm-12">
-						<a target="_blank" href="http://upload.wikimedia.org/wikipedia/commons/b/be/Mais_fg01.jpg"><img style="width:400px;" src="http://upload.wikimedia.org/wikipedia/commons/b/be/Mais_fg01.jpg"></img></a>
-						<p style="font-size:10px;"> <a target="_blank" href="http://commons.wikimedia.org/wiki/User:Dysmachus">Fritz Geller-Grimm</a></p>
-					</div>
+					<p>
+                        Click "No" for the following example - this is a field with no missing plants.
+    					<div class="col-sm-12">
+    						<a target="_blank" href="http://upload.wikimedia.org/wikipedia/commons/b/be/Mais_fg01.jpg"><img style="width:400px;" src="http://upload.wikimedia.org/wikipedia/commons/b/be/Mais_fg01.jpg"></img></a>
+    						<p style="font-size:10px;"> <a target="_blank" href="http://commons.wikimedia.org/wiki/User:Dysmachus">Fritz Geller-Grimm</a></p>
+    					</div>
 					<p>
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+            <div id="step_8_answer">
                 <button class="step_8 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <!-- If the user cli11ks this button, the saved answer will be value="no"-->
-                <button class="step_8 btn btn-answer btn-danger" value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_8 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> Its not clear</button>
-				<button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_8 btn btn-answer" value='Unknown'><i class="fa fa-white fa-question-sign"></i>I don't know</button>
-            </div><!-- End of DIV for the submission buttons -->
+                <button class="step_8 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="step_8 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_8 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+            </div>
         </div>
         <!-- End Step 8 -->
-
-        <!-- Last Stepp -->
+        <!-- Last Step -->
         <div id="last_step" class="steps">
             <h1>Thanks! You have fully analyzed one picture</h1>
-            <div id="answer"> <!-- Start DIV for the submission buttons -->
-                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+            <div id="last_step_answer">
                 <button class="last_step btn btn-answer btn-large btn-success" value='Submit'>Save it and load another one</button>
-            </div><!-- End of DIV for the submission buttons -->
+            </div>
         </div>
         <!-- End Last Step-->
-
         <!-- End questionary -->
         <div style="margin-top:5px;">
             <button class="back btn btn-answer" style="display:none;"><i class="fa fa-chevron-left"></i> Go to previous step</button>
@@ -536,14 +508,14 @@ $( document ).ready(function() {
     <div id="area1" class="col-xs-6 affix-top">
 		<div class="row">
 			<div class="col-xs-12" id="photo-link">
-					<img id="photo" src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">
+    			<img id="photo" src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">
 			</div>
 			<div class="col-xs-12" style="margin-top:10px;">
-					<a href="javascript:zoomin()" class="btn btn-primary">Zoom IN</a>
-					&nbsp;|&nbsp;
-					<a href="javascript:zoomout()"  class="btn btn-primary">Zoom OUT</a>
-					&nbsp;|&nbsp;
-					<a id="img_source" target="_blank" href="#"  class="btn btn-primary">View Photo Source</a>
+    			<a href="javascript:zoomin()" class="btn btn-primary">Zoom IN</a>
+    			&nbsp;|&nbsp;
+    			<a href="javascript:zoomout()"  class="btn btn-primary">Zoom OUT</a>
+    			&nbsp;|&nbsp;
+    			<a id="img_source" target="_blank" href="#"  class="btn btn-primary">View Photo Source</a>
 			</div>
 		</div>
     </div>
@@ -696,14 +668,21 @@ pybossa.presentTask(function(task, deferred) {
                 $("#step_2").show();
             }
 
-            // Check if step is 2
-            if ($(evt.target).hasClass('step_2')) {
-                task.answer.cropID = tmp;
-                $(".steps").hide();
-                task.steps.push(3);
-                $("#step_3").show();
-            }
+            // Check if step is 2 (identifying crop species).
+            if ($(evt.target).hasClass('step_2')){
+                 // For step 2, we can have a listed or unlisted answer. In the latter case, the answer is
+                 // stored in the 'crops_other' input field and not as the button value.
+                 if ($(evt.target).attr("id") === "crops_other_button")
+                     tmp = $("#crops_other").val().trim();
 
+                 // Only store a valid answer.
+                 if (!!tmp){
+                     task.answer.cropID = tmp;
+                     $(".steps").hide();
+                     task.steps.push(3);
+                     $("#step_3").show();
+                 }
+             }
 
            // Check if step is 3
             if ($(evt.target).hasClass('step_3')) {
