@@ -1,24 +1,6 @@
 <style>
     .steps { display: none }
 </style>
-<script>
-/* Start of Help Popup Modular Script*/
-$( document ).ready(function() {
-
-	$("*[data-toggle=tooltip]").tooltip();
-
-	$(".help_popup_a").click(function(event){
-		event.preventDefault();
-		$(".help_popup_description",$(this).parent()).toggle();
-		if($(".help_popup_description",$(this).parent()).css("display")=="block") {
-			$(this).html("Hide the help!");
-		} else
-			$(this).html("Get some help");
-	});
-
-});
-/* End of Help Popup Modular Script*/
-</script>
 <div class="row skeleton">
     <div id="area0" class="col-xs-6">
         <!-- Questionary -->
@@ -97,7 +79,7 @@ $( document ).ready(function() {
             <div id="step_0_answer">
                 <button class="step_0 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
                 <button class="step_0 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-                <button class="step_0 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+                <button class="step_0 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
                 <button class="step_0 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
             </div>
         </div>
@@ -149,7 +131,7 @@ $( document ).ready(function() {
                 <button class="step_1 btn btn-answer" value='Manual'>Manual cultivation</button>
                 <button class="step_1 btn btn-answer" value='Animals'>With animals</button>
                 <button class="step_1 btn btn-answer" value='Machine'>By machine</button>
-				<button class="step_1 btn btn-answer" value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_1 btn btn-answer" value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
 				<button class="step_1 btn btn-answer" value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
@@ -174,7 +156,7 @@ $( document ).ready(function() {
 					</p>
 					<p><strong>None of the suggestions match?</strong> Try looking for lists of agricultural products for the region or country you are working on. Under the "Other" box there should be a link to a document on the relevant agricultural sector, you can start your search from here.</p>
 					<p><strong>What to search for?</strong><ul><li>Keywords: "agriculture", "crops", the name of the country in which you are working</li><li>"What do they grow in XX country?"</li><li>Agricultural department (or similar), NGO's, or organisations like the Food and Agriculture Organisation (FAO). These organisations often have inventories or reports on the agricultural activities within a particular country.</li></ul></p>
-					<p>Identifying a plant can often take some time, so don't get discouraged if you feel it is taking too long! And if you are stuck you can always click the "Unknown" button and move onto the next question.</p>
+					<p>Identifying a plant can often take some time, so don't get discouraged if you feel it is taking too long! And if you are stuck you can always click the "I don't know" button and move onto the next question.</p>
 				</div>
 			</div>
 			<p>&nbsp;</p>
@@ -244,7 +226,7 @@ $( document ).ready(function() {
 					<li class="col-xs-4">
                         <div class="thumbnail">
                             <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Vraagteken.svg/200px-Vraagteken.svg.png" style="width: 50%; height: 50%">
-                            <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_2 btn btn-answer" value='Unknown'>Unknown</button>
+                            <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_2 btn btn-answer" value='Unknown'>I don't know</button>
                         </div>
                     </li>
                 </ul>
@@ -294,7 +276,7 @@ $( document ).ready(function() {
             <div id="step_3_answer">
                 <button class="step_3 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
                 <button class="step_3 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-                <button class="step_3 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+                <button class="step_3 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
                 <button class="step_1 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
@@ -347,7 +329,7 @@ $( document ).ready(function() {
 			<div id="step_4_answer">
                 <button class="step_4 btn btn-success btn-answer" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
                 <button class="step_4 btn btn-danger btn-answer"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_4 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_4 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
 				<button class="step_4 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
@@ -365,7 +347,7 @@ $( document ).ready(function() {
             <div id="step_5_answer">
                 <button class="step_5 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
                 <button class="step_5 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_5 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_5 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
 				<button class="step_5 btn btn-answer"             value='Unkown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
             </div>
         </div>
@@ -383,7 +365,7 @@ $( document ).ready(function() {
             <div id="step_6_answer">
                 <button class="step_6 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
                 <button class="step_6 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_6 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_6 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
 				<button class="step_6 btn btn-answer"             value='Unkown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
             </div>
         </div>
@@ -437,7 +419,7 @@ $( document ).ready(function() {
             <div id="step_7_answer">
                 <button class="step_7 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
                 <button class="step_7 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_7 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_7 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
 				<button class="step_7 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
@@ -467,7 +449,7 @@ $( document ).ready(function() {
             <div id="step_8_answer">
                 <button class="step_8 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
                 <button class="step_8 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_8 btn btn-answer"             value='NoPhoto'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="step_8 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
 				<button class="step_8 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
@@ -485,51 +467,34 @@ $( document ).ready(function() {
             <button class="back btn btn-answer" style="display:none;"><i class="fa fa-chevron-left"></i> Go to previous step</button>
         </div>
     </div>
-    <!--<div id="img-details" class="col-xs-4">-->
-        <!-- Collapse -->
-        <!--<div class="accordion" id="accordion2">
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                       EXIF data
-                    </a>
-                </div>
-                <div id="collapseOne" class="accordion-body collapse in">
-                    <div id="exif" class="accordion-inner">
-                        This picture does not have any EXIF data.
-                    </div>
-                </div>
-            </div>
-        </div>-->
-        <!-- End collapse -->
-        <!--</div>-->
 
-    <!-- +FC UNOSAT ZOOM MODIFICATION -->
-    <div id="area1" class="col-xs-6 affix-top">
+
+    <link type="text/css" src="https://raw.githubusercontent.com/spMohanty/Magnifier.js/master/magnifier.css"/>
+	<div id="image" class="col-xs-6 affix-top"><!-- The image to analyze. -->
 		<div class="row">
-			<div class="col-xs-12" id="photo-link">
-    			<img id="photo" src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">
-			</div>
 			<div class="col-xs-12" style="margin-top:10px;">
-    			<a href="javascript:zoomin()" class="btn btn-primary">Zoom IN</a>
-    			&nbsp;|&nbsp;
-    			<a href="javascript:zoomout()"  class="btn btn-primary">Zoom OUT</a>
-    			&nbsp;|&nbsp;
-    			<a id="img_source" target="_blank" href="#"  class="btn btn-primary">View Photo Source</a>
+				<a id="img_source" target="_blank" href="#" class="btn btn-primary">View Photo Source</a>
+				<br>
+				Hover over the image to zoom, use the mouse scroll wheel to zoom in and out (<a target="_blank" href="http://mark-rolich.github.io/Magnifier.js/">Magnifier.js</a>)
 			</div>
+			<div style="margin: 0 auto">
+				<a class="magnifier-thumb-wrapper demo col-xs-12">
+					<img style="width:100%" id="thumb" src="http://i.imgur.com/GeHxzb7.png">
+				</a>
+			</div>
+			<div class="magnifier-preview col-xs-12" style="height: 300px" id="preview"></div>
 		</div>
-    </div>
-	<!-- -FC UNOSAT ZOOM MODIFICATION -->
+	</div>
+</div>
 
-</div><!-- End of Skeleton Row -->
 
+<!-- Success and Error Messages for the user -->
 <div class="row">
-    <!-- Success and Error Messages for the user -->
-    <div class="col-xs-6 col-xs-offset-2" style="height:50px">
-        <div id="success" class="alert alert-success" style="display:none;">
-            <a class="close">×</a>
-            <strong>Well done!</strong> Your answer has been saved
-        </div>
+	<div class="col-xs-6 col-xs-offset-2" style="height:50px">
+		<div id="success" class="alert alert-success" style="display:none;">
+			<a class="close">×</a>
+			<strong>Well done!</strong> Your answer has been saved
+		</div>
         <div id="loading" class="alert alert-info" style="display:none;">
             <a class="close">×</a>
             Loading next task...
@@ -537,304 +502,86 @@ $( document ).ready(function() {
         <div id="taskcompleted" class="alert alert-info" style="display:none;">
             <strong>The task has been completed!</strong> Thanks a lot!
         </div>
-        <div id="finish" class="alert alert-success" style="display:none;">
-            <strong>Congratulations!</strong> You have participated in all available tasks!
-            <br/>
-            <div class="alert-actions">
-                <a class="btn small" href="/">Go back</a>
-                <a class="btn small" href="/app">or, Check other applications</a>
-            </div>
-        </div>
-        <div id="error" class="alert alert-error" style="display:none;">
-            <a class="close">×</a>
-            <strong>Error!</strong> Something went wrong, please contact the site administrators
-        </div>
-    </div> <!-- End Success and Error Messages for the user -->
-</div> <!-- End of Row -->
-
-<!-- +FC UNOSAT WORKFLOW/ZOOM MODIFICATION -->
+		<div id="finish" class="alert alert-success" style="display:none;">
+			<strong>Congratulations!</strong> You have participated in all available tasks!
+			<br>
+			<div class="alert-actions">
+				<a class="btn small" href="/">Go back</a>
+				<a class="btn small" href="/app">or, Check other applications</a>
+			</div>
+		</div>
+		<div id="error" class="alert alert-error" style="display:none;">
+			<a class="close">×</a>
+			<strong>Error!</strong> Something went wrong, please contact the site administrators
+		</div>
+    </div>
+</div>
 <script src="/static/js/pybossa/unosat.js"></script>
-<!-- -FC UNOSAT WORKFLOW/ZOOM MODIFICATION -->
-
+<script src="/static/js/geotagx.js"></script>
+<script src="/static/js/pybossa/Event.js"></script>
+<script src="/static/js/pybossa/Magnifier.js"></script>
 <script>
-
-function zoomin(){
-    $("#photo-link").addClass("zoomed");
-
-}
-
-function zoomout() {
-    $("#photo-link").removeClass("zoomed");
-
-}
-pybossa.taskLoaded(function(task, deferred) {
-    if ( ! $.isEmptyObject(task) ) {
-        // load image from flickr
-        var img = $('<img />');
-        img.load(function() {
-            // continue as soon as the image is loaded
-            deferred.resolve(task);
-        });
-        img.attr('src', task.info.url);
-        img.attr('id', 'anno_' + task.id);
-        img.addClass('img-polaroid');
-        img.addClass('annotable');
-        task.info.image = img;
-        // Initiate answer with default values
-        task.steps = [0];
-        task.answer = {"img": task.info.url,
-                       "task_id": task.id,
-                       "ag": "",
-                       "agCultivation": "",
-                       "cropID": "",
-                       "cropGreen": "",
-					   "cropWilting": "",
-                       "cropOtherGreen": "",
-					   "cropOtherGreenExternal": "",
-                       "cropHarvest": "",
-					   "cropMissing": ""}
-    }
-    else {
-        deferred.resolve(task);
-    }
-});
-
-pybossa.presentTask(function(task, deferred) {
-    if ( !$.isEmptyObject(task) ) {
-        $('#photo-link').html('').append(task.info.image);
-        //$("#question").html(task.info.question);
-        $('#task-id').html(task.id);
-        $("#img_source").attr("href", task.info.uri);
-        $(".back").hide();
-
-        // Hide all steps first
-        $(".steps").hide();
-        // Show first step
-        $("#step_relevant_filter").show();
-        // Reset input fields
-        //$("#n_stories").val(0);
-
-        $('.btn-answer').off('click').on('click', function(evt) {
-            // Get value of pressed button
-            var tmp = $(evt.target).attr("value");
-
-			// PAGINATION
-
-			var pag_max_steps = $(".steps").length;
-			var pag_n_steps = $(".steps").index($(".steps:visible"));
-			var pag_perc=(((pag_n_steps+1)/(pag_max_steps-1))*100).toFixed(0);
-			$("#progress_bar_task").css("width",pag_perc+"%");
-			$("#progress_bar_task").html(pag_perc+"%");
-
-			// PAGINATION
-
-			// Check if step is the photo filter
-            if ($(evt.target).hasClass('step_relevant_filter')) {
-
-                $(".steps").hide();
-                if (tmp == "No") {
-                    //alert("DB: Yes");
-                    $("#step_0").show();
-
-                    }
-                else {
-					alert("DB: No ajax");
-					$.ajax({
-						url: url + 'api/filter/' + taskid +'/no',
-						dataType: 'json'
-					});
-                    $("#last_step").show();
-                }
-            }
-
-            // Check if step is 0
-            if ($(evt.target).hasClass('step_0')) {
-                task.answer.ag = tmp;
-                $(".steps").hide();
-                if (tmp == "Yes") {
-                    task.steps.push(1);
-                    $("#step_1").show();
-                    $(".back").show();
-                    }
-                else {
-                    $("#last_step").show();
-                }
-            }
-             // Check if step is 1
-            if ($(evt.target).hasClass('step_1')) {
-                task.answer.agCultivation = tmp;
-                $(".steps").hide();
-                task.steps.push(2);
-                $("#step_2").show();
-            }
-
-            // Check if step is 2 (identifying crop species).
-            if ($(evt.target).hasClass('step_2')){
-                 // For step 2, we can have a listed or unlisted answer. In the latter case, the answer is
-                 // stored in the 'crops_other' input field and not as the button value.
-                 if ($(evt.target).attr("id") === "crops_other_button")
-                     tmp = $("#crops_other").val().trim();
-
-                 // Only store a valid answer.
-                 if (!!tmp){
-                     task.answer.cropID = tmp;
-                     $(".steps").hide();
-                     task.steps.push(3);
-                     $("#step_3").show();
-                 }
-             }
-
-           // Check if step is 3
-            if ($(evt.target).hasClass('step_3')) {
-                // This steps gets the info from an input field
-                //var tmp = $("#n_stories").val();
-                task.answer.cropGreen = tmp;
-                $(".steps").hide();
-                if (tmp == 'Yes') {
-                    task.steps.push(4);
-                    $("#step_4").show();
-                }
-                else {
-                    task.steps.push(5);
-                    $("#step_5").show();
-                }
-            }
-
-			// Check if step is 4
-            if ($(evt.target).hasClass('step_4')) {
-                task.answer.cropWilting = tmp;
-                $(".steps").hide();
-                task.steps.push(7);
-                $("#step_7").show();
-            }
-
-			// Check if step is 5
-            if ($(evt.target).hasClass('step_5')) {
-                task.answer.cropOtherGreen = tmp;
-                $(".steps").hide();
-                task.steps.push(6);
-                $("#step_6").show();
-            }
-
-            // Check if step is 6
-            if ($(evt.target).hasClass('step_6')) {
-                task.answer.cropOtherGreenExternal= tmp;
-                $(".steps").hide();
-                task.steps.push(7);
-                $("#step_7").show();
-            }
-
-            // Check if step is 7
-            if ($(evt.target).hasClass('step_7')) {
-                task.answer.cropHarvest= tmp;
-                $(".steps").hide();
-                task.steps.push(8);
-                $("#step_8").show();
-            }
-
-            // Check if step is 8
-            if ($(evt.target).hasClass('step_8')) {
-                task.answer.cropMissing = tmp;
-                $(".steps").hide();
-                $("#last_step").show();
-            }
-
-            // Check if step is last
-            if ($(evt.target).hasClass('last_step')) {
-                zoomout();
-				$(".help_popup_description").css("display","none");
-                $("input:checkbox").removeAttr("checked");
-                //+FC UNOSAT WORKFLOW MODIFICATION
-                saveTask(task.id, task.answer).done(function() {
-                deferred.resolve();
-                })
-                //-FC UNOSAT WORKFLOW MODIFICATION
-            }
-
-            // Check if back button is pressed
-            if ($(evt.target).hasClass('back')) {
-                console.log(JSON.stringify(task.steps));
-                zoomout();
-                $("#last_step").hide();
-                var last_step = task.steps.pop();
-                var id = "#step_" + last_step.toString();
-                var prev_id = "#step_" + task.steps[task.steps.length - 1];
-                $(id).hide();
-                $(prev_id).show();
-                if (prev_id == "#step_0") {
-                    $(".back").hide();
-                    task.steps = [0];
-                }
-
-                //if ((prev_id == "#step_9") || (prev_id == "#step_11") || (prev_id == '#step_14') || (prev_id == '#step_15')) {
-                //    anno.reset();
-                //    $("#crack_category").hide();
-                //    $("#crack_rebars").hide();
-                //    $("#crack_rebars").hide();
-                //    $("#damage_category").hide();
-                //    $("#answer").hide();
-                //}
-
-                console.log(JSON.stringify(task.steps));
-            }
-            // print answer on console
-            // console.log(JSON.stringify(task.answer));
-        });
-
-
-        //$("#btn-submit").html("<i class='fa-repeat'></i> I don't recognize any person, try next one");
-        //$("#btn-submit").removeClass("btn-success");
-        //if (!$.isEmptyObject(task.info.exif)) {
-        //    //var keys = Object.keys(task.info.exif);
-        //    //$("#exif").html("");
-        //    //for(i=0;i<keys.length;i++){
-        //    //$("#exif").append("<p><strong>" + keys[i] + "</strong>: " + task.info.exif[keys[i]] + "</p>");
-        //    //}
-        //    $("#exif").html(JSON.stringify(task.info.exif));
-        //}
-        //else {
-        //    $("#exif").html("There is no EXIF data in this picture.");
-        //}
-
-        //anno.makeAnnotatable(document.getElementById('anno_' + task.id));
-
-        //anno.addHandler('onAnnotationCreated', function(annotation) {
-        //    //console.log(annotation.text);
-        //    $("#btn-submit").html("<i class='fa fa-save'></i> Save current annotations");
-        //    $("#btn-submit").addClass("btn-success");
-        //});
-
-        //$('.btn-answer').off('click').on('click', function(evt) {
-        //    var answer = $(evt.target).attr("value");
-        //    if (typeof answer != 'undefined') {
-        //        //console.log(answer);
-        //        pybossa.saveTask(task.id, anno.getAnnotations()).done(function() {
-        //            deferred.resolve();
-        //        });
-        //        $("#loading").fadeIn(500);
-        //        if ($("#disqus_thread").is(":visible")) {
-        //            $('#disqus_thread').toggle();
-        //            $('.btn-disqus').toggle();
-        //        }
-        //    }
-        //    else {
-        //        $("#error").show();
-        //    }
-        //});
-        $("#loading").hide();
-    }
-    else {
-        $(".skeleton").hide();
-        $("#loading").hide();
-        $("#finish").fadeIn(500);
-    }
+// Assigns a result field to a step number.
+geotagx.task.setResultMap({
+    0:"ag",
+    1:"agCultivation",
+    2:"cropID",
+    3:"cropGreen",
+    4:"cropWilting",
+    5:"cropOtherGreen",
+    6:"cropOtherGreenExternal",
+    7:"cropHarvest",
+    8:"cropMissing",
 });
 
 
+// Set the result submission handler.
+geotagx.task.onSubmitResult = function(submission, $submitter){
+    var currentStep = geotagx.task.currentStep();
+    switch (currentStep){
+        case 0: // Determine whether or not there're crops in the image.
+            geotagx.task.saveResult(submission);
+            if (submission === "Yes")
+                geotagx.task.showNextStep();
+            else
+                geotagx.task.showLastStep(); // If the image doesn't contain any crops, skip to the last step.
+        break;
+        case 2: // Determine the crop species.
+            // For step 2, we can have a listed or unlisted answer. In the latter case, the answer is
+            // stored in the 'crops_other' input field and not as the button value.
+            if ($submitter.attr("id") === "crops_other_button")
+                submission = $("#crops_other").val().trim();
 
+            // Only store a valid answer.
+            if (!!submission){
+                geotagx.task.saveResult(submission);
+                geotagx.task.showNextStep();
+            }
+            break;
+        case 3: // Determine whether the crop is green or not.
+            geotagx.task.saveResult(submission);
+            if (submission === "Yes")
+                geotagx.task.showNextStep();
+            else
+                geotagx.task.showStep(5); // If the crop is not green, then skip to step 5.
+            break;
+        case 4: // Determine whether the crop is wilting or not.
+            geotagx.task.saveResult(submission);
+            geotagx.task.showStep(7);
+            break;
+        case 1: // Determine the method of cultivation.
+        case 5: // Determine whether or not other vegetation is present in the image.
+        case 6: // Determine whether or not the vegetation around the edges of the field is green.
+        case 7: // Determine whether or not the crop looks like it's been harvested.
+        case 8: // Determine whether or not any plants may be missing from the row.
+            geotagx.task.saveResult(submission);
+            geotagx.task.showNextStep();
+            break;
+        default:
+            break;
+    }
+};
 
-//+FC UNOSAT WORKFLOW MODIFICATION
-make_run('cropid2','cropid2');
-//-FC UNOSAT WORKFLOW MODIFICATION
-
+// Run the application.
+geotagx.task.run("cropid2", "cropid2");
 </script>
