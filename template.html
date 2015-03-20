@@ -1,27 +1,38 @@
-<style>
-    .steps { display: none }
-</style>
-<div class="row skeleton">
-    <div id="area0" class="col-xs-6">
-        <!-- Questionary -->
-		<!-- Step -1 -->
-        <div id="step_relevant_filter" class="steps">
-            <h1>Is this photo spam?</h1>
-            <p>Sometimes, people collecting photos might accidentally send something not useful, like an advertisement.</p>
-            <p>If this photo is an advertisement or similar you should choose "Spam"</p>
-            <p>Selecting "Spam" will skip this photo</p>
-            <p>Selecting "Not Spam" or "I don't know" will allow you to go ahead with the analysis</p>
-            <p>If you are not sure, select "I don't know"</p>
-            <div id="step_relevant_filter_answer">
-                <button class="step_relevant_filter btn btn-answer btn-danger" value='Yes'><i class="fa fa-white fa-thumbs-down"></i> Spam</button>
-                <button class="step_relevant_filter btn btn-answer btn-success" value='No'><i class="fa fa-white fa-thumbs-up"></i> Not Spam</button>
-                <button class="step_relevant_filter btn btn-answer" value='NoPhoto'><i class="fa fa-white fa-exclamation"></i> No photo</button>
-                <button class="step_relevant_filter btn btn-answer" value='Unknown'><i class="fa fa-white fa-question-sign"></i> I don't know</button>
+<link rel="stylesheet" href="/static/css/template.css">
+<div class="row alerts"><!-- Success and error messages. -->
+    <div id="alerts-column" class="col-md-6 col-md-offset-2">
+        <div id="success"       class="alert alert-success"><strong id="i18n_welldone">Well done!</strong> <span id="i18n_welldone_text">Your answer has been saved.</span><a class="close">×</a></div>
+        <div id="loading"       class="alert alert-info"><span id="i18n_loading_next_task">Loading next task...</span><a class="close">×</a></div>
+        <div id="taskcompleted" class="alert alert-info"><strong id="i18n_task_completed">The task has been completed!</strong> <span id="i18n_thanks">Thanks a lot!</span></div>
+        <div id="finish"        class="alert alert-success"><strong id="i18n_congratulations">Congratulations!</strong> <span id="i18n_congratulations_text">You have participated in all available tasks!</span><br>
+            <div class="alert-actions">
+                <a class="btn small" href="/">Go back</a>
+                <a class="btn small" href="/app">or, Check other projects</a>
             </div>
         </div>
-        <!-- End Step -1 -->
-        <!-- Step 0 -->
-        <div id="step_0" class="steps">
+        <div id="error" class="alert alert-danger"><strong>Error!</strong> Something went wrong, please contact the site administrators<a class="close">×</a></div>
+    </div>
+</div>
+<div class="row skeleton"><!-- Skeleton row. -->
+    <section id="questionnaire" class="col-xs-6"><!-- The questions to answer. -->
+        <div id="questionnaire-filter" class="question"><!-- The questionnaire's spam filter -->
+			<h1>Is this photo spam?</h1>
+			<p>Sometimes, people collecting photos might accidentally send something not useful, like an advertisement.</p>
+			<p>If this photo is an advertisement or similar you should choose "Spam" and it will be skipped.</p>
+			<p>Selecting "Not Spam" or "I don't know" will allow you to go ahead with the analysis.</p>
+			<p>If you are not sure, select "I don't know"</p>
+			<div id="questionnaire-filter-answer">
+    			<button class="questionnaire-filter btn btn-answer btn-danger"  value='Yes'><i class="fa fa-white fa-thumbs-down"></i> Spam</button>
+    			<button class="questionnaire-filter btn btn-answer btn-success" value='No'><i class="fa fa-white fa-thumbs-up"></i> Not Spam</button>
+    			<button class="questionnaire-filter btn btn-answer"             value='NoPhoto'><i class="fa fa-white fa-exclamation"></i> No photo</button>
+    			<button class="questionnaire-filter btn btn-answer"             value='Unknown'><i class="fa fa-white fa-question-sign"></i> I don't know</button>
+			</div>
+		</div>
+
+
+        <!-- Begin questions. -->
+        <!-- Question 0. -->
+        <div id="questionnaire-question-0" class="question">
             <h1>Are there crops in the photo?</h1>
 			<div class="row help_popup col-xs-12">
                 <i class="fa fa-exclamation-circle"></i> How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
@@ -76,16 +87,16 @@
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="step_0_answer">
-                <button class="step_0 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <button class="step_0 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-                <button class="step_0 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
-                <button class="step_0 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
+            <div id="questionnaire-question-0-answer">
+                <button class="questionnaire-question-0 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
+                <button class="questionnaire-question-0 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+                <button class="questionnaire-question-0 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
+                <button class="questionnaire-question-0 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
             </div>
         </div>
-        <!-- End Step 0 -->
-        <!-- Step 1 -->
-        <div id="step_1" class="steps">
+        <!-- End question 0. -->
+        <!-- Question 1. -->
+        <div id="questionnaire-question-1" class="question">
             <h1>Can you see the method of cultivation?</h1>
 			<div class="row help_popup col-xs-12">
                 <i class="fa fa-exclamation-circle"></i> How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
@@ -127,17 +138,17 @@
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="step_1_answer">
-                <button class="step_1 btn btn-answer" value='Manual'>Manual cultivation</button>
-                <button class="step_1 btn btn-answer" value='Animals'>With animals</button>
-                <button class="step_1 btn btn-answer" value='Machine'>By machine</button>
-				<button class="step_1 btn btn-answer" value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
-				<button class="step_1 btn btn-answer" value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+            <div id="questionnaire-question-1-answer">
+                <button class="questionnaire-question-1 btn btn-answer" value='Manual'>Manual cultivation</button>
+                <button class="questionnaire-question-1 btn btn-answer" value='Animals'>With animals</button>
+                <button class="questionnaire-question-1 btn btn-answer" value='Machine'>By machine</button>
+				<button class="questionnaire-question-1 btn btn-answer" value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="questionnaire-question-1 btn btn-answer" value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
-        <!-- End Step 1-->
-		<!-- Step 2 -->
-        <div id="step_2" class="steps">
+        <!-- End question 1. -->
+		<!-- Question 2. -->
+        <div id="questionnaire-question-2" class="question">
             <h1>What species of crop are you seeing?</h1>
     		<p>Hint: search the internet to find pictures that will help you identify what you are seeing in the photo, you can use the links under each suggested species to start</p>
 			<div class="row help_popup col-xs-12">
@@ -160,13 +171,13 @@
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="step_2_answer">
+            <div id="questionnaire-question-2-answer">
                 <ul class="thumbnails">
                     <li class="col-xs-4">
                         <div class="thumbnail">
                             <img src="http://www.nextgencassava.org/img/resources/field-scientist-woman-farmer.jpg">
                             <p style="font-size:10px;"> <a target="_blank" href="http://www.nextgencassava.org">Next Generation Cassava</a></p>
-                            <button class="step_2 btn btn-answer" value='Cassava'>Cassava</button>
+                            <button class="questionnaire-question-2 btn btn-answer" value='Cassava'>Cassava</button>
                         </div>
 						<p style="font-size:10px;"> <a target="_blank" href="https://www.google.com/#q=cassava">Get more examples</a></p>
                     </li>
@@ -174,7 +185,7 @@
                         <div class="thumbnail">
                             <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Banana_plantation_-_Flickr_-_exfordy.jpg/320px-Banana_plantation_-_Flickr_-_exfordy.jpg?uselang=en-gb">
                             <p style="font-size:10px;"> <a target="_blank" href="http://www.flickr.com/people/32659528@N00">Brian Snelson</a></p>
-                            <button class="step_2 btn btn-answer" value='Banana'>Banana</button>
+                            <button class="questionnaire-question-2 btn btn-answer" value='Banana'>Banana</button>
                         </div>
 						<p style="font-size:10px;"> <a target="_blank" href="https://www.google.com/#q=banana+plant">Get more examples</a></p>
                     </li>
@@ -182,7 +193,7 @@
                         <div class="thumbnail">
                             <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Corn_plantation.JPG/320px-Corn_plantation.JPG?uselang=en-gb">
                             <p style="font-size:10px;"> <a target="_blank" href="http://commons.wikimedia.org/wiki/Special:Search/Bhanupratap59">Bhanupratap59</a></p>
-                            <button class="step_2 btn btn-answer" value='Maize'>Maize (Corn)</button>
+                            <button class="questionnaire-question-2 btn btn-answer" value='Maize'>Maize (Corn)</button>
                         </div>
 						<p style="font-size:10px;"> <a target="_blank" href="https://www.google.com/#q=maize">Get more examples</a></p>
                     </li>
@@ -193,7 +204,7 @@
                         <div class="thumbnail">
                             <img src="http://upload.wikimedia.org/wikipedia/commons/6/6c/Potato_field_in_Ghughu-danga%2CDinajpur.jpg?uselang=en-gb">
                             <p style="font-size:10px;"> <a target="_blank" href="http://commons.wikimedia.org/wiki/Special:Search/Uddinsultana">Uddinsultana</a></p>
-                            <button class="step_2 btn btn-answer" value='Potato'>Potato</button>
+                            <button class="questionnaire-question-2 btn btn-answer" value='Potato'>Potato</button>
                         </div>
 						<p style="font-size:10px;"> <a target="_blank" href="https://www.google.com/#q=potato">Get more examples</a></p>
                     </li>
@@ -201,7 +212,7 @@
                         <div class="thumbnail">
                             <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Grain_millet%2C_early_grain_fill%2C_Tifton%2C_7-3-02.jpg/320px-Grain_millet%2C_early_grain_fill%2C_Tifton%2C_7-3-02.jpg">
                             <p style="font-size:10px;"> <a target="_blank" href="http://en.wikipedia.org/wiki/File:Grain_millet,_early_grain_fill,_Tifton,_7-3-02.jpg">USDA-ARS</a></p>
-                            <button class="step_2 btn btn-answer" value='Millet'>Millet</button>
+                            <button class="questionnaire-question-2 btn btn-answer" value='Millet'>Millet</button>
                         </div>
 						<p style="font-size:10px;"> <a target="_blank" href="https://www.google.com/#q=millet">Get more examples</a></p>
                     </li>
@@ -209,7 +220,7 @@
                         <div class="thumbnail">
                             <img src="http://4.bp.blogspot.com/-1mTOJ20TQuk/U3i1Tj62SCI/AAAAAAAACn0/qa1XSF2eB0E/s1600/tomato-tips-380-1.jpg">
                             <p style="font-size:10px;"> <a target="_blank" href="http://sushlaventulip06.blogspot.ch/2014/05/the-pulpy-bubbly-tomato.html">sushlaventulip06</a></p>
-                            <button class="step_2 btn btn-answer" value='Tomato'>Tomato</button>
+                            <button class="questionnaire-question-2 btn btn-answer" value='Tomato'>Tomato</button>
                         </div>
 						<p style="font-size:10px;"> <a target="_blank" href="https://www.google.com/#q=tomato+plant">Get more examples</a></p>
                     </li>
@@ -220,21 +231,21 @@
 						<div>
 							<p>Not in the list? Type your identification here, these resources could help your identification:</p>
 							<input id="crops_other" type="text" name="crops_other"><br>
-							<button id="crops_other_button" class="button step_2 btn btn-answer">Done</button>
+							<button id="crops_other_button" class="button questionnaire-question-2 btn btn-answer">Done</button>
 						</div>
 					</li>
 					<li class="col-xs-4">
                         <div class="thumbnail">
                             <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Vraagteken.svg/200px-Vraagteken.svg.png" style="width: 50%; height: 50%">
-                            <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="step_2 btn btn-answer" value='Unknown'>I don't know</button>
+                            <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?" class="questionnaire-question-2 btn btn-answer" value='Unknown'>I don't know</button>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
-        <!-- End Step 2 -->
-		<!-- Step 3 -->
-        <div id="step_3" class="steps">
+        <!-- End question 2. -->
+		<!-- Question 3. -->
+        <div id="questionnaire-question-3" class="question">
             <h1>Are the crops green?</h1>
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i>How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
@@ -273,16 +284,16 @@
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="step_3_answer">
-                <button class="step_3 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <button class="step_3 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-                <button class="step_3 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
-                <button class="step_1 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+            <div id="questionnaire-question-3-answer">
+                <button class="questionnaire-question-3 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
+                <button class="questionnaire-question-3 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+                <button class="questionnaire-question-3 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
+                <button class="questionnaire-question-1 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
-        <!-- End Step 3 -->
-		<!-- Step 4 -->
-        <div id="step_4" class="steps">
+        <!-- End question 3. -->
+		<!-- Question 4. -->
+        <div id="questionnaire-question-4" class="question">
             <h1>Do the plants seem to be wilting? Or their leaves rolling?</h1>
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i>How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
@@ -326,16 +337,16 @@
 				</div>
 			</div>
 			<p>&nbsp;</p>
-			<div id="step_4_answer">
-                <button class="step_4 btn btn-success btn-answer" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <button class="step_4 btn btn-danger btn-answer"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_4 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
-				<button class="step_4 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+			<div id="questionnaire-question-4-answer">
+                <button class="questionnaire-question-4 btn btn-success btn-answer" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
+                <button class="questionnaire-question-4 btn btn-danger btn-answer"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="questionnaire-question-4 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="questionnaire-question-4 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
-        <!-- End Step 4 -->
-        <!-- Step 5 -->
-        <div id="step_5" class="steps">
+        <!-- End question 4. -->
+        <!-- Question 5. -->
+        <div id="questionnaire-question-5" class="question">
             <h1>Do you see any green vegetation in the field?</h1>
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i> Need help with the question? <a href="javascript:void(0)">Click here!</a>
@@ -344,16 +355,16 @@
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="step_5_answer">
-                <button class="step_5 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <button class="step_5 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_5 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
-				<button class="step_5 btn btn-answer"             value='Unkown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
+            <div id="questionnaire-question-5-answer">
+                <button class="questionnaire-question-5 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
+                <button class="questionnaire-question-5 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="questionnaire-question-5 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="questionnaire-question-5 btn btn-answer"             value='Unkown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
             </div>
         </div>
-        <!-- End Step 5 -->
-        <!-- Step 6 -->
-        <div id="step_6" class="steps">
+        <!-- End question 5. -->
+        <!-- Question 6. -->
+        <div id="questionnaire-question-6" class="question">
             <h1>Is the vegetation around the edges of the field green?</h1>
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i> Need help with the question? <a href="javascript:void(0)">Click here!</a>
@@ -362,16 +373,16 @@
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="step_6_answer">
-                <button class="step_6 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <button class="step_6 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_6 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
-				<button class="step_6 btn btn-answer"             value='Unkown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
+            <div id="questionnaire-question-6-answer">
+                <button class="questionnaire-question-6 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
+                <button class="questionnaire-question-6 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="questionnaire-question-6 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="questionnaire-question-6 btn btn-answer"             value='Unkown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i> I don't know</button>
             </div>
         </div>
-        <!-- End Step 6 -->
-        <!-- Step 7 -->
-        <div id="step_7" class="steps">
+        <!-- End question 6. -->
+        <!-- Question 7. -->
+        <div id="questionnaire-question-7" class="question">
             <h1>Does the crop look like it has been harvested?</h1>
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i>How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
@@ -416,16 +427,16 @@
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="step_7_answer">
-                <button class="step_7 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <button class="step_7 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_7 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
-				<button class="step_7 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+            <div id="questionnaire-question-7-answer">
+                <button class="questionnaire-question-7 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
+                <button class="questionnaire-question-7 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="questionnaire-question-7 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="questionnaire-question-7 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
-        <!-- End Step 7 -->
-		<!-- Step 8 -->
-        <div id="step_8" class="steps">
+        <!-- End question 7. -->
+		<!-- Question 8. -->
+        <div id="questionnaire-question-8" class="question">
             <h1>Are there any plants missing from the rows?</h1>
 			<div class="row help_popup col-xs-12">
 				<i class="fa fa-exclamation-circle"></i> How do I answer this question? <a class="help_popup_a" href="javascript:void(0)">Get some help</a>
@@ -446,83 +457,43 @@
 				</div>
 			</div>
 			<p>&nbsp;</p>
-            <div id="step_8_answer">
-                <button class="step_8 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
-                <button class="step_8 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
-				<button class="step_8 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
-				<button class="step_8 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
+            <div id="questionnaire-question-8-answer">
+                <button class="questionnaire-question-8 btn btn-answer btn-success" value='Yes'><i class="fa fa-white fa-thumbs-up"></i> Yes</button>
+                <button class="questionnaire-question-8 btn btn-answer btn-danger"  value='No'><i class="fa fa-white fa-thumbs-down"></i> No</button>
+				<button class="questionnaire-question-8 btn btn-answer"             value='NotClear'><i class="fa fa-white"></i> It's not clear</button>
+				<button class="questionnaire-question-8 btn btn-answer"             value='Unknown' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Did you read the Get Some Help section?"><i class="fa fa-white fa-question-sign"></i>I don't know</button>
             </div>
         </div>
-        <!-- End Step 8 -->
-        <!-- Last Step -->
-        <div id="last_step" class="steps">
-            <h1>Thanks! You have fully analyzed one picture</h1>
-            <div id="last_step_answer">
-                <button class="last_step btn btn-answer btn-large btn-success" value='Submit'>Save it and load another one</button>
-            </div>
-        </div>
-        <!-- End Last Step-->
-        <!-- End questionary -->
-        <div style="margin-top:5px;">
-            <button class="back btn btn-answer" style="display:none;"><i class="fa fa-chevron-left"></i> Go to previous step</button>
-        </div>
-    </div>
+        <!-- End question 8. -->
+        <!-- End questions. -->
 
 
-    <link type="text/css" src="https://raw.githubusercontent.com/spMohanty/Magnifier.js/master/magnifier.css"/>
-	<div id="image" class="col-xs-6 affix-top"><!-- The image to analyze. -->
-		<div class="row">
-			<div class="col-xs-12" style="margin-top:10px;">
-				<a id="img_source" target="_blank" href="#" class="btn btn-primary">View Photo Source</a>
-				<br>
-				Hover over the image to zoom, use the mouse scroll wheel to zoom in and out (<a target="_blank" href="http://mark-rolich.github.io/Magnifier.js/">Magnifier.js</a>)
-			</div>
-			<div style="margin: 0 auto">
-				<a class="magnifier-thumb-wrapper demo col-xs-12">
-					<img style="width:100%" id="thumb" src="http://i.imgur.com/GeHxzb7.png">
-				</a>
-			</div>
-			<div class="magnifier-preview col-xs-12" style="height: 300px" id="preview"></div>
-		</div>
-	</div>
+        <!-- The questionnaire submission verification. -->
+        <div id="questionnaire-verify-submit" class="question">
+            <h1>Thanks! Your analysis is complete.</h1>
+            <p><strong>Please share your feedback! Get on <a target="_blank" href="https://github.com/geotagx/pybossa/issues">GitHub</a> or <a href="mailto:eleanor.rusack@unitar.org?Subject=GeoTag-X feedback" target="_top">send an email</a> if you prefer.</strong></p>
+            <div><button class="questionnaire-verify-submit btn btn-answer btn-large btn-success">Save it and load another one</button></div>
+        </div>
+        <div id="questionnaire-ui"><!-- Additional questionnaire user interface. -->
+            <button id="questionnaire-ui-rewind" class="btn" disabled="disabled"><i class="fa fa-fw fa-chevron-left"></i>Go to previous question</button>
+            <button id="questionnaire-ui-show-comments" class="btn btn-primary"><i class="fa fa-fw fa-comments-o"></i>Show comments</button>
+        </div>
+        <div id="disqus_thread" class="col-xs-12"></div><!-- The comment thread container. -->
+    </section>
+  	<section id="image" class="col-xs-6 affix-top"><!-- The image to analyze. -->
+    	<div class="row">
+            <div class="col-xs-12"><p   id="image_loading"><strong>Loading ...</strong></p></div>
+            <div class="col-xs-12"><img id="image_content"></div>
+            <div class="col-xs-12"><p   id="image_caption">The original image was obtained from <strong><a id="image_src" target="_blank" href="#">here</a></strong>.</p><p id="image_wheelzoom_tooltip">Hover your mouse over the image and use the scroll wheel to zoom in and out.</p></div>
+    	</div>
+  	</section>
 </div>
-
-
-<!-- Success and Error Messages for the user -->
-<div class="row">
-	<div class="col-xs-6 col-xs-offset-2" style="height:50px">
-		<div id="success" class="alert alert-success" style="display:none;">
-			<a class="close">×</a>
-			<strong>Well done!</strong> Your answer has been saved
-		</div>
-        <div id="loading" class="alert alert-info" style="display:none;">
-            <a class="close">×</a>
-            Loading next task...
-        </div>
-        <div id="taskcompleted" class="alert alert-info" style="display:none;">
-            <strong>The task has been completed!</strong> Thanks a lot!
-        </div>
-		<div id="finish" class="alert alert-success" style="display:none;">
-			<strong>Congratulations!</strong> You have participated in all available tasks!
-			<br>
-			<div class="alert-actions">
-				<a class="btn small" href="/">Go back</a>
-				<a class="btn small" href="/app">or, Check other applications</a>
-			</div>
-		</div>
-		<div id="error" class="alert alert-error" style="display:none;">
-			<a class="close">×</a>
-			<strong>Error!</strong> Something went wrong, please contact the site administrators
-		</div>
-    </div>
-</div>
+<script src="/static/js/vendor/wheelzoom.js"></script>
 <script src="/static/js/pybossa/unosat.js"></script>
 <script src="/static/js/geotagx.js"></script>
-<script src="/static/js/pybossa/Event.js"></script>
-<script src="/static/js/pybossa/Magnifier.js"></script>
 <script>
-// Assigns a result field to a step number.
-geotagx.task.setResultMap({
+// Assign a result field to each question number and set the submission handler.
+geotagx.task.prepare({
     0:"ag",
     1:"agCultivation",
     2:"cropID",
@@ -532,55 +503,50 @@ geotagx.task.setResultMap({
     6:"cropOtherGreenExternal",
     7:"cropHarvest",
     8:"cropMissing",
-});
-
-
-// Set the result submission handler.
-geotagx.task.onSubmitResult = function(submission, $submitter){
-    var currentStep = geotagx.task.currentStep();
-    switch (currentStep){
+}, function(question, result, $submitter){
+    switch (question){
         case 0: // Determine whether or not there're crops in the image.
-            geotagx.task.saveResult(submission);
-            if (submission === "Yes")
-                geotagx.task.showNextStep();
+            geotagx.task.save(result);
+            if (result === "Yes")
+                geotagx.task.showNextQuestion();
             else
-                geotagx.task.showLastStep(); // If the image doesn't contain any crops, skip to the last step.
-        break;
+                geotagx.task.showLastQuestion(); // If the image doesn't contain any crops, skip to the last question.
+            break;
         case 2: // Determine the crop species.
-            // For step 2, we can have a listed or unlisted answer. In the latter case, the answer is
+            // For question 2, we can have a listed or unlisted answer. In the latter case, the answer is
             // stored in the 'crops_other' input field and not as the button value.
             if ($submitter.attr("id") === "crops_other_button")
-                submission = $("#crops_other").val().trim();
+                result = $("#crops_other").val().trim();
 
-            // Only store a valid answer.
-            if (!!submission){
-                geotagx.task.saveResult(submission);
-                geotagx.task.showNextStep();
+            // Only store a valid result.
+            if (!!result){
+                geotagx.task.save(result);
+                geotagx.task.showNextQuestion();
             }
             break;
         case 3: // Determine whether the crop is green or not.
-            geotagx.task.saveResult(submission);
-            if (submission === "Yes")
-                geotagx.task.showNextStep();
+            geotagx.task.save(result);
+            if (result === "Yes")
+                geotagx.task.showNextQuestion();
             else
-                geotagx.task.showStep(5); // If the crop is not green, then skip to step 5.
+                geotagx.task.showQuestion(5); // If the crop is not green, then skip to question 5.
             break;
         case 4: // Determine whether the crop is wilting or not.
-            geotagx.task.saveResult(submission);
-            geotagx.task.showStep(7);
+            geotagx.task.save(result);
+            geotagx.task.showQuestion(7);
             break;
         case 1: // Determine the method of cultivation.
         case 5: // Determine whether or not other vegetation is present in the image.
         case 6: // Determine whether or not the vegetation around the edges of the field is green.
         case 7: // Determine whether or not the crop looks like it's been harvested.
         case 8: // Determine whether or not any plants may be missing from the row.
-            geotagx.task.saveResult(submission);
-            geotagx.task.showNextStep();
+            geotagx.task.save(result);
+            geotagx.task.showNextQuestion();
             break;
         default:
             break;
     }
-};
+});
 
 // Run the application.
 geotagx.task.run("cropid2", "cropid2");
