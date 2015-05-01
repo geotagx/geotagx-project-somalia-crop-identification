@@ -1,0 +1,170 @@
+{
+	"name":"Crop identification for drought",
+	"short_name":"cropid2",
+	"category":"Somali Drought",
+	"description":"Identify crops and drought stress.",
+	"why":"This project experiments with identifying information on the effects of drought on crops.",
+	"questions":[
+		{
+			"id":1,
+			"title":"Are there crops in the photo?",
+			"type":"binary",
+			"answer":{
+				"saved_as":"ag"
+			},
+			"branch":[
+				{"no":"finish"}
+			]
+		},
+		{
+			"id":2,
+			"title":"Can you see the method of cultivation?",
+			"type":"multiple_choice",
+			"answer":{
+				"saved_as":"agCultivation",
+				"choices":[
+					{"Manual":"Manual cultivation"},
+					{"Animals":"With animals"},
+					{"Machine":"By machine"}
+				]
+			}
+		},
+		{
+			"id":3,
+			"title":"What species of crop are you seeing?",
+			"hint":"You can search the internet to find pictures that will help you identify what you are seeing in the photo.",
+			"type":"multiple_choice",
+			"answer":{
+				"saved_as":"cropID",
+				"choices":[
+					{
+						"label":"Cassava",
+						"value":"Cassava",
+						"illustration":{
+							"image":"http://www.nextgencassava.org/img/resources/field-scientist-woman-farmer.jpg",
+							"source":{
+								"name":"Next Generation Cassava",
+								"url":"http://www.nextgencassava.org"
+							}
+						},
+						"more_examples":"https://www.google.com/#q=cassava"
+					},
+					{
+						"label":"Banana",
+						"value":"Banana",
+						"illustration":{
+							"image":"http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Banana_plantation_-_Flickr_-_exfordy.jpg/320px-Banana_plantation_-_Flickr_-_exfordy.jpg?uselang=en-gb",
+							"source":{
+								"name":"Brian Snelson",
+								"url":"http://www.flickr.com/people/32659528@N00"
+							}
+						},
+						"more_examples":"https://www.google.com/#q=banana+plant"
+					},
+					{
+						"label":"Maize (Corn)",
+						"value":"Maize",
+						"illustration":{
+							"image":"http://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Corn_plantation.JPG/320px-Corn_plantation.JPG?uselang=en-gb",
+							"source":{
+								"name":"Bhanupratap59",
+								"url":"http://commons.wikimedia.org/wiki/Special:Search/Bhanupratap59"
+							}
+						},
+						"more_examples":"https://www.google.com/#q=maize"
+					},
+					{
+						"label":"Potato",
+						"value":"Potato",
+						"illustration":{
+							"image":"http://upload.wikimedia.org/wikipedia/commons/6/6c/Potato_field_in_Ghughu-danga%2CDinajpur.jpg?uselang=en-gb",
+							"source":{
+								"name":"Uddinsultana",
+								"url":"http://commons.wikimedia.org/wiki/Special:Search/Uddinsultana"
+							}
+						},
+						"more_examples":"https://www.google.com/#q=potato"
+					},
+					{
+						"label":"Millet",
+						"value":"Millet",
+						"illustration":{
+							"image":"http://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Grain_millet%2C_early_grain_fill%2C_Tifton%2C_7-3-02.jpg/320px-Grain_millet%2C_early_grain_fill%2C_Tifton%2C_7-3-02.jpg",
+							"source":{
+								"name":"USDA-ARS",
+								"url":"http://en.wikipedia.org/wiki/File:Grain_millet,_early_grain_fill,_Tifton,_7-3-02.jpg"
+							}
+						},
+						"more_examples":"https://www.google.com/#q=millet"
+					},
+					{
+						"label":"Tomato",
+						"value":"Tomato",
+						"illustration":{
+							"image":"http://4.bp.blogspot.com/-1mTOJ20TQuk/U3i1Tj62SCI/AAAAAAAACn0/qa1XSF2eB0E/s1600/tomato-tips-380-1.jpg",
+							"source":{
+								"name":"sushlaventulip06",
+								"url":"http://sushlaventulip06.blogspot.ch/2014/05/the-pulpy-bubbly-tomato.html"
+							}
+						},
+						"more_examples":"https://www.google.com/#q=tomato+plant"
+					}
+				]
+			}
+		},
+		{
+			"id":4,
+			"title":"Are the crops green?",
+			"type":"binary",
+			"answer":{
+				"saved_as":"cropGreen"
+			},
+			"branch":[
+				{"no":6}
+			]
+		},
+		{
+			"id":5,
+			"title":"Do the plants seem to be wilting? Or their leaves rolling?",
+			"type":"binary",
+			"answer":{
+				"saved_as":"cropWilting"
+			},
+			"branch":8
+		},
+		{
+			"id":6,
+			"title":"Do you see any green vegetation in the field?",
+			"hint":"If the non-crop plants growing in close proximity to the crops are green but the crops are not green then they might be dried down and ready to harvest.  If both the crops and the surrounding vegetation are brown or showing signs of drought stress then it is likely there is a drought.",
+			"type":"binary",
+			"answer":{
+				"saved_as":"cropOtherGreen"
+			}
+		},
+		{
+			"id":7,
+			"title":"Is the vegetation around the edges of the field green?",
+			"hint":"If the non-crop plants growing in close proximity to the crops are green but the crops are not green then they might be dried down and ready to harvest.  If both the crops and the surrounding vegetation are brown or showing signs of drought stress then it is likely there is a drought.",
+			"type":"binary",
+			"answer":{
+				"saved_as":"cropOtherGreenExternal"
+			}
+		},
+		{
+			"id":8,
+			"title":"Does the crop look like it has been harvested?",
+			"type":"binary",
+			"answer":{
+				"saved_as":"cropHarvest"
+			}
+		},
+		{
+			"id":9,
+			"title":"Are there any plants missing from the rows?",
+			"type":"binary",
+			"answer":{
+				"saved_as":"cropMissing"
+			}
+		}
+	]
+}
