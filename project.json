@@ -33,7 +33,7 @@
 			"id":3,
 			"title":"What species of crop are you seeing?",
 			"hint":"You can search the internet to find pictures that will help you identify what you are seeing in the photo.",
-			"type":"multiple_choice",
+			"type":"illustrated_multiple_choice",
 			"answer":{
 				"saved_as":"cropID",
 				"choices":[
