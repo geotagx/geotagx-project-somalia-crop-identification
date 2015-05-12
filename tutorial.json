@@ -1,0 +1,71 @@
+{
+	"tutorial":[
+		{
+			"image":"http://cafod.files.wordpress.com/2014/04/pascalice.jpg",
+			"image_source":"http://blog.cafod.org.uk/2014/05/02/drought-in-namibia-communities-at-the-mercy-of-the-weather/",
+			"assertions":{
+				"1":{
+					"expects":"yes",
+					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
+					"messages":{
+						"yes":"Well done! There are crops visible in this photo.",
+						"no":"Are you sure there are no crops in this photo? Check out the help for information on what you should be looking for."
+					}
+				},
+				"2":{
+					"expects":"notclear",
+					"default_message":"Do you really see any of these methods of cultivation? If you are not sure what to look for, check out the help for more information.",
+					"messages":{
+						"notclear":"Correct! While it is evident that there is a method of cultivation, we cannot tell which one it is from simply looking at the photo.",
+						"unknown":"Try again. If you are not sure what to look for, check out the help for more information.",
+						"none":"Are you sure there are no methods of cultivation in this photo?",
+						"manual":"Are you sure the man is working in the field? If he is just standing in the field, this does not indicate manual cultivation.",
+						"animals":"Do you see any tools or animals that may indicate cultivation with animals? If you are not sure what to look for, check out the help for more information.",
+						"machine":"Do you see any machinery that may suggest cultivation by machine? If you are not sure what to look for, check out the help for more information."
+					}
+				},
+				"3":{
+					"expects":"millet",
+					"default_message":"If you are having trouble identifying the plant, take a look at the photo's context to see if you can get any useful hints. If you are still not sure what to look for, check out the help for more information.",
+					"messages":{
+						"millet":"Correct! The crop you are looking at is millet.",
+						"unknown":"Try again. If you are not sure what to look for, check out the help for more information.",
+						"notclear":"Try again. If you are not sure what to look for, check out the help for more information."
+					}
+				},
+				"4":{
+					"expects":"yes",
+					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
+					"messages":{
+						"yes":"Well done! While there is some yellow in the crops, they are mostly green.",
+						"no":"Are you sure there is no green in these crops? Check out the help to see some examples."
+					}
+				},
+				"5":{
+					"expects":"yes",
+					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
+					"messages":{
+						"yes":"Correct! Some of the leaves are rolling and some plants seem to be wilting.",
+						"no":"Have you tried taking a closer look at the leaves by zooming in? Do they look flat or are they curled up?"
+					}
+				},
+				"8":{
+					"expects":"no",
+					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
+					"messages":{
+						"no":"Well done! The crops are still growing and have not yet been harvested.",
+						"yes":"Look at the plants closely. Are they in one piece? Are they still growing?"
+					}
+				},
+				"9":{
+					"expects":"yes",
+					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
+					"messages":{
+						"yes":"Well done! There are missing plants in the rows, the most obvious example being the clear area behind the man in the photo.",
+						"no":"Are you sure that there are no missing plants? Look at the ground behind the man in the photo, can you see the gaps where plants should be?"
+					}
+				}
+			}
+		}
+	]
+}
