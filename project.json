@@ -4,39 +4,43 @@
 	"category":"Somali Drought",
 	"description":"Identify crops and drought stress.",
 	"why":"This project experiments with identifying information on the effects of drought on crops.",
-	"questions":[
+	"questionnaire":[
 		{
-			"id":1,
-			"title":"Are there crops in the photo?",
+			"question":"Are there crops in the photo?",
+			"key":"ag",
 			"type":"binary",
-			"answer":{
-				"saved_as":"ag"
-			},
-			"branch":[
-				{"no":"finish"}
-			]
+			"branch":{
+				"no":"end"
+			}
 		},
 		{
-			"id":2,
-			"title":"Can you see the method of cultivation?",
-			"type":"multiple_choice",
-			"answer":{
-				"saved_as":"agCultivation",
-				"choices":[
-					{"Manual":"Manual cultivation"},
-					{"Animals":"With animals"},
-					{"Machine":"By machine"}
+			"question":"Can you see the method of cultivation?",
+			"key":"agCultivation",
+			"type":"checklist",
+			"parameters":{
+				"options":[
+					{
+						"label":"Manual cultivation",
+						"value":"Manual"
+					},
+					{
+						"label":"With animals",
+						"value":"Animals"
+					},
+					{
+						"label":"By machine",
+						"value":"Machine"
+					}
 				]
 			}
 		},
 		{
-			"id":3,
-			"title":"What species of crop are you seeing?",
+			"question":"What species of crop are you seeing?",
+			"key":"cropID",
 			"hint":"You can search the internet to find pictures that will help you identify what you are seeing in the photo.",
-			"type":"illustrated_multiple_choice",
-			"answer":{
-				"saved_as":"cropID",
-				"choices":[
+			"type":"illustrative-checklist",
+			"parameters":{
+				"options":[
 					{
 						"label":"Cassava",
 						"value":"Cassava",
@@ -113,58 +117,40 @@
 			}
 		},
 		{
-			"id":4,
-			"title":"Are the crops green?",
+			"question":"Are the crops green?",
+			"key":"cropGreen",
 			"type":"binary",
-			"answer":{
-				"saved_as":"cropGreen"
-			},
-			"branch":[
-				{"no":6}
-			]
+			"branch":{
+				"no":"cropOtherGreen"
+			}
 		},
 		{
-			"id":5,
-			"title":"Do the plants seem to be wilting? Or their leaves rolling?",
+			"question":"Do the plants seem to be wilting? Or their leaves rolling?",
+			"key":"cropWilting",
 			"type":"binary",
-			"answer":{
-				"saved_as":"cropWilting"
-			},
-			"branch":8
+			"branch":"cropHarvest"
 		},
 		{
-			"id":6,
-			"title":"Do you see any green vegetation in the field?",
+			"question":"Do you see any green vegetation in the field?",
+			"key":"cropOtherGreen",
 			"hint":"If the non-crop plants growing in close proximity to the crops are green but the crops are not green then they might be dried down and ready to harvest.  If both the crops and the surrounding vegetation are brown or showing signs of drought stress then it is likely there is a drought.",
-			"type":"binary",
-			"answer":{
-				"saved_as":"cropOtherGreen"
-			}
+			"type":"binary"
 		},
 		{
-			"id":7,
-			"title":"Is the vegetation around the edges of the field green?",
+			"question":"Is the vegetation around the edges of the field green?",
+			"key":"cropOtherGreenExternal",
 			"hint":"If the non-crop plants growing in close proximity to the crops are green but the crops are not green then they might be dried down and ready to harvest.  If both the crops and the surrounding vegetation are brown or showing signs of drought stress then it is likely there is a drought.",
-			"type":"binary",
-			"answer":{
-				"saved_as":"cropOtherGreenExternal"
-			}
+			"type":"binary"
 		},
 		{
-			"id":8,
-			"title":"Does the crop look like it has been harvested?",
-			"type":"binary",
-			"answer":{
-				"saved_as":"cropHarvest"
-			}
+			"question":"Does the crop look like it has been harvested?",
+			"key":"cropHarvest",
+			"type":"binary"
 		},
 		{
-			"id":9,
-			"title":"Are there any plants missing from the rows?",
-			"type":"binary",
-			"answer":{
-				"saved_as":"cropMissing"
-			}
+			"question":"Are there any plants missing from the rows?",
+			"key":"cropMissing",
+			"type":"binary"
 		}
 	]
 }

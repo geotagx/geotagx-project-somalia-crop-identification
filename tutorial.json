@@ -4,7 +4,7 @@
 			"image":"http://cafod.files.wordpress.com/2014/04/pascalice.jpg",
 			"image_source":"http://blog.cafod.org.uk/2014/05/02/drought-in-namibia-communities-at-the-mercy-of-the-weather/",
 			"assertions":{
-				"1":{
+				"ag":{
 					"expects":"yes",
 					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
 					"messages":{
@@ -12,7 +12,7 @@
 						"no":"Are you sure there are no crops in this photo? Check out the help for information on what you should be looking for."
 					}
 				},
-				"2":{
+				"agCultivation":{
 					"expects":"notclear",
 					"default_message":"Do you really see any of these methods of cultivation? If you are not sure what to look for, check out the help for more information.",
 					"messages":{
@@ -24,7 +24,7 @@
 						"machine":"Do you see any machinery that may suggest cultivation by machine? If you are not sure what to look for, check out the help for more information."
 					}
 				},
-				"3":{
+				"cropID":{
 					"expects":"millet",
 					"default_message":"If you are having trouble identifying the plant, take a look at the photo's context to see if you can get any useful hints. If you are still not sure what to look for, check out the help for more information.",
 					"messages":{
@@ -33,7 +33,7 @@
 						"notclear":"Try again. If you are not sure what to look for, check out the help for more information."
 					}
 				},
-				"4":{
+				"cropGreen":{
 					"expects":"yes",
 					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
 					"messages":{
@@ -41,7 +41,7 @@
 						"no":"Are you sure there is no green in these crops? Check out the help to see some examples."
 					}
 				},
-				"5":{
+				"cropWilting":{
 					"expects":"yes",
 					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
 					"messages":{
@@ -49,7 +49,7 @@
 						"no":"Have you tried taking a closer look at the leaves by zooming in? Do they look flat or are they curled up?"
 					}
 				},
-				"8":{
+				"cropHarvest":{
 					"expects":"no",
 					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
 					"messages":{
@@ -57,7 +57,7 @@
 						"yes":"Look at the plants closely. Are they in one piece? Are they still growing?"
 					}
 				},
-				"9":{
+				"cropMissing":{
 					"expects":"yes",
 					"default_message":"Try again. If you are not sure what to look for, check out the help for more information.",
 					"messages":{
